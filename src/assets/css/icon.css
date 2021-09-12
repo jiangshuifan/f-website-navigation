@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2377593 */
+  src: url('http://at.alicdn.com/t/font_2377593_pwr5tw974g.woff2?t=1627361818612') format('woff2'),
+       url('http://at.alicdn.com/t/font_2377593_pwr5tw974g.woff?t=1627361818612') format('woff'),
+       url('http://at.alicdn.com/t/font_2377593_pwr5tw974g.ttf?t=1627361818612') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cha:before {
+  content: "\e676";
+}
+
+.icon-CSDN:before {
+  content: "\e604";
+}
+
+.icon-bzhan:before {
+  content: "\e758";
+}
+
+.icon-Bzhan:before {
+  content: "\e600";
+}
+
+.icon-CSDNboke:before {
+  content: "\e6b6";
+}
+
+.icon-zhihu:before {
+  content: "\ea8b";
+}
+
+.icon-csdn:before {
+  content: "\e60a";
+}
+
+.icon-bilibili:before {
+  content: "\e6b4";
+}
+
+.icon-GitHub:before {
+  content: "\e8c6";
+}
+
+.icon-chilun:before {
+  content: "\e703";
+}
+
+.icon-F:before {
+  content: "\e60e";
+}

@@ -1,0 +1,31 @@
+.fade-enter-active,.fade-leave-active{
+    transition:opacity 0.5s;
+}
+.fade-enter,.fade-leave-to{
+    opacity:0
+}
+.fade-enter-to,.fade-leave{
+    opacity:1
+}
+
+.fold-enter-active,.fold-leave-active{
+    transition:0.5s;
+}
+.fold-enter,.fold-leave-to{
+    right: -100%;
+}
+.fold-enter-to,.fold-leave{
+    right: 0;
+}
+
+
+
+.foldmenu-enter-active,.foldmenu-leave-active{
+    transition:all 0.5s;
+}
+.foldmenu-enter,.foldmenu-leave-to{
+    height: 0;
+}
+.foldmenu-enter-to,.foldmenu-leave{
+    height: 120px;
+}
