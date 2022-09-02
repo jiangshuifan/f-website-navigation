@@ -5,20 +5,13 @@
       @click="unfoldmenu"
     ></div>
     <ul class="menu-item">
-      <li @click="unfoldmenu"><router-link to="/home">首页</router-link></li>
-      <li>
-        <span @click="handlesocial">社交</span>
-        <transition name="foldmenu">
-          <ul v-show="socialmenuUnFold" class="social-type">
-            <li><a>CSDN</a></li>
-            <li><a>Bilibili</a></li>
-            <li><a>Zhihu</a></li>
-            <li><a>GitHub</a></li>
-          </ul>
-        </transition>
+      <li
+        @click="redirectTo(item.path)"
+        v-for="item in menuData"
+        :key="item.id"
+      >
+        {{ item.name }}
       </li>
-      <li @click="unfoldmenu"><router-link to="/contact">联系</router-link></li>
-      <li @click="unfoldmenu"><router-link to="/about">关于</router-link></li>
     </ul>
   </div>
 </template>
@@ -26,20 +19,31 @@
 <script>
 export default {
   name: 'page-menu',
+  data() {
+    return {
+      socialmenuUnFold: false,
+      pagemenustate: false,
+      menuData: [
+        { id: 1, path: '/home', name: '首页' },
+        // { id: 2, path: '/contact', name: '联系' },
+        { id: 3, path: '/about', name: '关于' },
+        { id: 4, path: '/setting', name: '设置' },
+      ],
+    }
+  },
   methods: {
     unfoldmenu() {
       this.$emit('unfold')
+    },
+    redirectTo(path) {
+      this.$router.replace(path)
+      this.unfoldmenu()
     },
     handlesocial() {
       this.socialmenuUnFold = !this.socialmenuUnFold
     },
   },
-  data() {
-    return {
-      socialmenuUnFold: false,
-      pagemenustate: false,
-    }
-  },
+
   props: {
     menustate: {
       default: false,
@@ -67,12 +71,13 @@ export default {
   padding: 80px;
   width: 506px;
   height: 100%;
-  background-color: white;
+  background-color: #fff;
   font-size: 25px;
+  color: #444;
 }
 .menu-close {
   float: left;
-  position: relative;
+  position: absolute;
   height: 30px;
   width: 30px;
 }
@@ -107,17 +112,6 @@ export default {
 .menu-item > li {
   margin-bottom: 50px;
   cursor: pointer;
-}
-.social-type {
-  overflow: hidden;
-}
-.social-type > li {
-  margin-top: 2px;
-  text-align: right;
-}
-.social-type > li > a {
-  font-size: 14px;
-  color: rgba(80, 80, 80, 0.8);
 }
 @keyframes clockwise {
   0% {

@@ -5,11 +5,10 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    background-color: inherit;
   }
   
   .linksBox {
-    background-color: #f7f7f7;
     padding: 40px 116px 45px;
   }
   .classTab {
@@ -33,12 +32,8 @@
     justify-content: center;
     align-items: center;
   }
-  .link_tag {
-    color: #3c3c3c;
-  }
   .link_line a{
     padding: 8px 1em;
-    color:rgba(54,54,54, 0.7);
     display: flex;
     justify-content: center;
   }
@@ -61,7 +56,6 @@
   @media screen and (max-width: 1200px) {
     .pageContainer {
       width: 100%;
-      background-color: white;
       padding: 0;
     }
   }
@@ -114,6 +108,9 @@
     }
   }
   @media screen and (max-width: 480px){
+    #app{
+      padding: 0;
+    }
     .itemtext{
       padding:8px 0;
       background-color: transparent !important;

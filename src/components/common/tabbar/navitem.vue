@@ -1,8 +1,11 @@
 <template>
-  <div class="navitem" @click="redirectTo">
+  <div class="navitem" @click="_handleClick">
     <div
       class="itemtext"
-      :style="{ color: isActive ? textactivecolor : textcolor,backgroundColor:isActive?bgactivecolor:bgcolor }"
+      :style="{
+        color: isActive ? textactivecolor : textcolor,
+        backgroundColor: isActive ? bgactivecolor : bgcolor,
+      }"
     >
       <slot name="itemtext"></slot>
     </div>
@@ -11,38 +14,38 @@
 
 <script>
 export default {
-  name: "navitem",
+  name: 'navitem',
   props: {
     textcolor: {
-      default: "#888888",
+      default: '#888888',
     },
     textactivecolor: {
-      default: "#2c2c2c",
+      default: '#2c2c2c',
     },
-    bgcolor:{
-      default: "rgba(127, 127, 127, 0)",
+    bgcolor: {
+      default: 'rgba(127, 127, 127, 0)',
     },
-    bgactivecolor:{
-      default: "rgba(127, 127, 127, 0.4)",
+    bgactivecolor: {
+      default: 'rgba(127, 127, 127, 0.4)',
     },
-    path: {},
+    value: [String, Number],
+    activeValue: [String, Number],
   },
   methods: {
-    redirectTo() {
-      // this.$emit('showpath',this.path)
-      this.$router.replace(this.path);
+    _handleClick() {
+      this.$emit('click')
     },
   },
   computed: {
     isActive() {
-      return this.$route.path === this.path ? true : false;
+      return this.value === this.activeValue ? true : false
     },
   },
-};
+}
 </script>
 
 <style>
-.navitem{
+.navitem {
   display: flex;
   justify-content: center;
   align-items: center;

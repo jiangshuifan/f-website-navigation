@@ -1,65 +1,51 @@
 <template>
   <div>
-    <search-tab />
-    <div class="linksBox">
+    <SearchTab @focus="showLinks = false" @blur="showLinks = true" />
+    <div class="linksBox" v-show="showLinks">
       <div class="classTab">
-        <class-tb />
+        <class-tb @click="handleChangeClass" />
       </div>
       <div class="linksContent">
-          <keep-alive>
-            <router-view></router-view>
-          </keep-alive>
+        <LinkList ref="links"></LinkList>
       </div>
     </div>
-    <gallery />
+    <gallery v-show="showLinks" />
   </div>
 </template>
 
 <script>
-import PageHeader from "components/content/page-head/pageHeader";
-import SearchTab from "components/content/engine-tab/searchTab";
-import ClassTb from "components/content/class-tab/classTb";
-import Gallery from "components/content/gallery/gallery";
-import PageFooter from "components/content/footer/footer";
-import PageMenu from "components/content/menu/menu";
-
+import SearchTab from './components/engine-tab/index'
+import ClassTb from './components/class-tab/classTb'
+import Gallery from './components/gallery/index'
+import LinkList from './components/link-list/index'
 
 export default {
-  name: "fdream",
+  name: 'fdream',
   data() {
     return {
-      fold_menu: false,
-      path: "/home/design",
-    };
+      foldMenu: false,
+      showLinks: true,
+    }
   },
   components: {
-    PageHeader,
     SearchTab,
     ClassTb,
     Gallery,
-    PageFooter,
-    PageMenu
+    LinkList,
   },
   methods: {
+    handleFocusInput() {},
     handlefold() {
-      this.fold_menu = true;
+      this.foldMenu = true
     },
     handleunfold() {
-      this.fold_menu = false;
+      this.foldMenu = false
+    },
+    handleChangeClass(field) {
+      this.$refs.links.loadData(field)
     },
   },
-  created() {
-    this.$router.replace(this.path);
-  },
-  activated() {
-    this.$router.replace(this.path);
-  },
-  beforeRouteLeave(to, from, next) {
-    this.path = this.$route.path;
-    next();
-  },
-};
+}
 </script>
 
-<style>
-</style>
+<style></style>

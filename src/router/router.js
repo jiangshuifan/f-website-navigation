@@ -2,16 +2,16 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 const  home = ()=>import("views/home/FDream");
-const contact = () =>import("views/contact/contact");
-const about = () =>import("views/about/about");
+// const contact = () =>import("views/contact/index");
+const about = () =>import("views/about/index");
+const setting = () =>import("views/setting/index");
 
-const design = () => import("components/content/link-tab/design");
-const life = () => import("components/content/link-tab/life");
-const usuallyuse = () => import("components/content/link-tab/usuallyUse");
-const entertainment = () => import("components/content/link-tab/entertainment");
-const learn = () => import("components/content/link-tab/learn");
-const technology = () => import("components/content/link-tab/technology");
-const setting = ()=>import("components/content/link-tab/setting")
+// const design = () => import("views/home/components/tab/design");
+// const life = () => import("views/home/components/tab/life");
+// const usuallyuse = () => import("views/home/components/tab/usuallyUse");
+// const entertainment = () => import("views/home/components/tab/entertainment");
+// const learn = () => import("views/home/components/tab/learn");
+// const technology = () => import("views/home/components/tab/technology");
 
 Vue.use(VueRouter);
 
@@ -24,46 +24,49 @@ let routes = [
     path: "/home",
     component: home,
     name:'home',
-    children:[
-      {
-        path:"design",
-        component:design
-      },
-      {
-        path:"life",
-        component: life
-      },
-      {
-        path: "usuallyuse",
-        component: usuallyuse
-      },
-      {
-        path: "entertainment",
-        component: entertainment
-      },
-      {
-        path: "learn",
-        component: learn
-      },
-      {
-        path: "technology",
-        component: technology
-      },
-      {
-        path:"setting",
-        component:setting
-      }
-    ]
+    // redirect:'/home/design',
+    // children:[
+    //   {
+    //     path:"design",
+    //     component:design
+    //   },
+    //   {
+    //     path:"life",
+    //     component: life
+    //   },
+    //   {
+    //     path: "usuallyuse",
+    //     component: usuallyuse
+    //   },
+    //   {
+    //     path: "entertainment",
+    //     component: entertainment
+    //   },
+    //   {
+    //     path: "learn",
+    //     component: learn
+    //   },
+    //   {
+    //     path: "technology",
+    //     component: technology
+    //   },
+
+    // ]
   },
-  {
-    path: "/contact",
-    component:contact,
-    name:'contact',
-  },
+  // {
+  //   path: "/contact",
+  //   component:contact,
+  //   name:'contact',
+  // },
   {
     path: "/about",
     component:about,
     name:'about'
+  },
+  {
+    path:"/setting",
+    component:setting,
+    name:'setting'
   }];
 const router = new VueRouter({
   routes,
