@@ -15,7 +15,9 @@
         </div>
       </div>
     </div>
-    <button class="set-save-btn" @click="setsave">保存</button>
+    <div style="margin-top:30px">
+      <button class="set-save-btn" @click="setsave">保存</button>
+    </div>
   </div>
 </template>
 
@@ -95,8 +97,6 @@ export default {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 .set-save-btn {
-  position: absolute;
-  bottom: 16px;
   padding: 8px 16px;
   letter-spacing: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);

@@ -63,7 +63,11 @@
             v-for="item in associateWords"
             :key="item.word"
           >
-            <div>{{ item.word }}</div>
+            <div
+              style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"
+            >
+              {{ item.word }}
+            </div>
             <div
               @click.stop="removeRecord(item.word)"
               v-show="showHistoryRecord"
@@ -368,9 +372,6 @@ export default {
   padding: 4px;
   margin: 4px 0;
   cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .associate-item:hover {
   color: rgb(101, 47, 210);
