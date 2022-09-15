@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="about-intro">
-      <div class="about-intro-head">访我所访</div>
+      <div class="about-intro-head">访站</div>
       <div style="opacity 0.7" class="about-intro-text">
         一个网址导航，简约、易用
       </div>

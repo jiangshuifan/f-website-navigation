@@ -2,7 +2,7 @@
   <div class="gallery">
     <div class="gallery_left">
       <a class="f" href="">
-        <div class="f-top">访我所访</div>
+        <div class="f-top">访站</div>
         <div class="f-bottom">
           一个网址导航，简约、易用
         </div>

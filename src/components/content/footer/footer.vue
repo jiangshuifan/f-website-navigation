@@ -9,7 +9,9 @@
         <a href=""><div class="iconfont icon-CSDN"></div></a>
         <a href=""><div class="iconfont icon-bzhan"></div></a>
         <a href=""><div class="iconfont icon-zhihu"></div></a>
-        <a href=""><div class="iconfont icon-GitHub"></div></a>
+        <a href="https://github.com/jiangshuifan/f-website-navigation"
+          ><div class="iconfont icon-GitHub"></div
+        ></a>
       </div>
     </div>
   </div>
